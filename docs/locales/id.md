@@ -1,7 +1,7 @@
 <div align="center">
 
 <p>
-  <img src="../assets/locales/id/banner.svg" alt="GitHub Organization Map &amp; Cartography" width="100%" />
+  <a href="https://github.com/maya-thorne/github-org-map"><img src="../assets/locales/id/banner.svg" alt="GitHub Organization Map &amp; Cartography" width="100%" /></a>
 </p>
 
 # github-org-map
@@ -18,13 +18,13 @@
 <p>
   <a href="https://github.com/maya-thorne/github-org-map/releases"><img src="https://img.shields.io/badge/Release-v1.0.0-A78BFA?style=flat-square&logo=github&labelColor=161126" alt="Release" /></a>
   <a href="../../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square&labelColor=161126" alt="License: MIT" /></a>
-  <img src="https://img.shields.io/badge/TypeScript-5.0+-3178C6.svg?style=flat-square&logo=typescript&logoColor=white&labelColor=161126" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Privacy-Zero--Knowledge%20SHA--256-F43F5E.svg?style=flat-square&labelColor=161126" alt="Privacy: SHA-256" />
-  <img src="https://img.shields.io/badge/Refresh-Automated%20Daily%20Cron-10B981.svg?style=flat-square&labelColor=161126" alt="Daily Automation" />
+  <a href="https://github.com/maya-thorne/github-org-map"><img src="https://img.shields.io/badge/TypeScript-5.0+-3178C6.svg?style=flat-square&logo=typescript&logoColor=white&labelColor=161126" alt="TypeScript" /></a>
+  <a href="https://github.com/maya-thorne/github-org-map"><img src="https://img.shields.io/badge/Privacy-Zero--Knowledge%20SHA--256-F43F5E.svg?style=flat-square&labelColor=161126" alt="Privacy: SHA-256" /></a>
+  <a href="https://github.com/maya-thorne/github-org-map"><img src="https://img.shields.io/badge/Refresh-Automated%20Daily%20Cron-10B981.svg?style=flat-square&labelColor=161126" alt="Daily Automation" /></a>
 </p>
 
 <p align="center">
-  <img src="../assets/locales/id/org-map.svg" alt="GitHub Organization Map" width="100%" />
+  <a href="https://github.com/maya-thorne/github-org-map"><img src="../assets/locales/id/org-map.svg" alt="GitHub Organization Map" width="100%" /></a>
 </p>
 
 </div>
