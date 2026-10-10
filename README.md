@@ -159,7 +159,7 @@ npm test
 ---
 
 <details>
-<summary><h2 style="display:inline-block; margin:0;">📬 Contact</h2></summary>
+<summary><h2 style="display:inline-block; margin:0;">Contact</h2></summary>
 
 For public work, feedback, or a closer look at the implementation, these are the clearest starting points.
 

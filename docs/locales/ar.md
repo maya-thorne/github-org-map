@@ -111,7 +111,7 @@ npm test
 ---
 
 <details>
-<summary><h2 style="display:inline-block; margin:0;">📬 للتواصل</h2></summary>
+<summary><h2 style="display:inline-block; margin:0;">للتواصل</h2></summary>
 
 للعمل العام، الملاحظات، أو إلقاء نظرة فاحصة على التنفيذ، هذه هي أوضح نقاط البداية.
 

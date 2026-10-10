@@ -127,7 +127,7 @@ npm test
 ---
 
 <details>
-<summary><h2 style="display:inline-block; margin:0;">📬 연락</h2></summary>
+<summary><h2 style="display:inline-block; margin:0;">연락</h2></summary>
 
 공개 작업, 피드백, 구현 내용을 더 살펴보려면 아래 경로가 가장 빠릅니다.
 

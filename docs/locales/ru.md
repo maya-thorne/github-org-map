@@ -111,7 +111,7 @@ npm test
 ---
 
 <details>
-<summary><h2 style="display:inline-block; margin:0;">📬 Контакты</h2></summary>
+<summary><h2 style="display:inline-block; margin:0;">Контакты</h2></summary>
 
 Для вопросов по публичным проектам, обратной связи или детального ознакомления с реализацией лучше всего использовать эти ссылки.
 

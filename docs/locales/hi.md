@@ -100,7 +100,7 @@ npm test
 ---
 
 <details>
-<summary><h2 style="display:inline-block; margin:0;">📬 संपर्क</h2></summary>
+<summary><h2 style="display:inline-block; margin:0;">संपर्क</h2></summary>
 
 सार्वजनिक कार्य, फ़ीडबैक या कार्यान्वयन को करीब से देखने के लिए ये सबसे स्पष्ट शुरुआती बिंदु हैं।
 

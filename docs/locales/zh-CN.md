@@ -112,7 +112,7 @@ npm test
 ---
 
 <details>
-<summary><h2 style="display:inline-block; margin:0;">📬 联系</h2></summary>
+<summary><h2 style="display:inline-block; margin:0;">联系</h2></summary>
 
 对于公开工作、反馈或深入了解实现细节，这些是最直接的入口。
 

@@ -111,7 +111,7 @@ Para perguntas, comentários ou sugestões, utilize os links oficiais abaixo.
 ---
 
 <details>
-<summary><h2 style="display:inline-block; margin:0;">📬 Contato</h2></summary>
+<summary><h2 style="display:inline-block; margin:0;">Contato</h2></summary>
 
 Para trabalhos públicos, feedback ou uma olhada mais detalhada na implementação, estes são os pontos de partida mais diretos.
 

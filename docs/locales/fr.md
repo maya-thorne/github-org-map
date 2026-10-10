@@ -100,7 +100,7 @@ npm test
 ---
 
 <details>
-<summary><h2 style="display:inline-block; margin:0;">📬 Contact</h2></summary>
+<summary><h2 style="display:inline-block; margin:0;">Contact</h2></summary>
 
 Pour les travaux publics, les retours ou un examen plus approfondi de l'implémentation, voici les points d'entrée les plus clairs.
 

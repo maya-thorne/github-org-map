@@ -111,7 +111,7 @@ Untuk pertanyaan, masukan, atau ide, silakan gunakan tautan resmi di bawah ini.
 ---
 
 <details>
-<summary><h2 style="display:inline-block; margin:0;">📬 Kontak</h2></summary>
+<summary><h2 style="display:inline-block; margin:0;">Kontak</h2></summary>
 
 Untuk pekerjaan publik, masukan, atau melihat implementasi lebih dekat, tautan berikut adalah titik awal yang paling jelas.
 
