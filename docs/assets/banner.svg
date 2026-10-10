@@ -89,17 +89,17 @@
       <!-- Badge 1 -->
       <rect x="0" y="0" width="168" height="26" rx="6" fill="#131c2e" stroke="#1e3a5f" stroke-width="1"/>
       <circle cx="12" cy="13" r="3.5" fill="#38bdf8" filter="url(#badge-glow)"/>
-      <text x="24" y="17" fill="#7dd3fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700">MAYA THORNE SYSTEMS</text>
+      <text x="24" y="17" fill="#7dd3fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700">MAYA THORNE · SYSTEMS</text>
 
       <!-- Badge 2 -->
       <rect x="180" y="0" width="195" height="26" rx="6" fill="#1e1329" stroke="#4c1d95" stroke-width="1"/>
       <circle cx="192" cy="13" r="3.5" fill="#c084fc" filter="url(#badge-glow)"/>
-      <text x="204" y="17" fill="#e9d5ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700">ZERO-KNOWLEDGE MASKING</text>
+      <text x="204" y="17" fill="#e9d5ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700">KERNEL &amp; RUNTIMES</text>
 
       <!-- Badge 3 -->
       <rect x="387" y="0" width="165" height="26" rx="6" fill="#0f231d" stroke="#065f46" stroke-width="1"/>
       <circle cx="399" cy="13" r="3.5" fill="#34d399" filter="url(#badge-glow)"/>
-      <text x="411" y="17" fill="#6ee7b7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700">DAILY AUTOMATED CRON</text>
+      <text x="411" y="17" fill="#6ee7b7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700">SHA-256 HASH MASK</text>
     </g>
 
     <!-- Main Title -->
