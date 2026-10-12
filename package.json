@@ -2,6 +2,7 @@
   "name": "github-org-map",
   "version": "1.0.0",
   "description": "Generates a dated SVG map of a GitHub account/org's repositories, keeps a history, and assembles a GIF of how it changed over time. Private repository names are masked before anything is written.",
+  "license": "MT-SRL",
   "private": true,
   "type": "module",
   "engines": {

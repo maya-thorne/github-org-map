@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
 
 <p>
   <a href="https://github.com/maya-thorne/github-org-map"><img src="../assets/locales/es/banner.svg" alt="GitHub Organization Map &amp; Cartography" width="100%" /></a>
@@ -17,7 +17,7 @@
 
 <p>
   <a href="https://github.com/maya-thorne/github-org-map/releases"><img src="https://img.shields.io/badge/Release-v1.0.0-A78BFA?style=flat-square&logo=github&labelColor=161126" alt="Release" /></a>
-  <a href="../../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square&labelColor=161126" alt="License: MIT" /></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/badge/License-MT--SRL-10b981.svg?style=flat-square&labelColor=161126" alt="License: MT-SRL" /></a>
   <a href="https://github.com/maya-thorne/github-org-map"><img src="https://img.shields.io/badge/TypeScript-5.0+-3178C6.svg?style=flat-square&logo=typescript&logoColor=white&labelColor=161126" alt="TypeScript" /></a>
   <a href="https://github.com/maya-thorne/github-org-map"><img src="https://img.shields.io/badge/Privacy-Zero--Knowledge%20SHA--256-F43F5E.svg?style=flat-square&labelColor=161126" alt="Privacy: SHA-256" /></a>
   <a href="https://github.com/maya-thorne/github-org-map"><img src="https://img.shields.io/badge/Refresh-Automated%20Daily%20Cron-10B981.svg?style=flat-square&labelColor=161126" alt="Daily Automation" /></a>
