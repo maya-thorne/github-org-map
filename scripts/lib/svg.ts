@@ -42,7 +42,7 @@ const MONO_STACK =
 
 const LAYOUT = {
   margin: 28,
-  headerHeight: 52,
+  headerHeight: 64,
   headerGap: 24,
   groupGap: 24,
   columnWidth: 360,
@@ -271,45 +271,84 @@ export function buildSvg({
   );
   const contentHeight = rendered.length > 0 ? Math.max(...rendered.map((r) => r.height)) : 200;
 
-  const width = Math.max(LAYOUT.margin * 2 + contentWidth, 760);
-  const height = groupTop + contentHeight + LAYOUT.footerHeight + 8;
-  const headerWidth = width - LAYOUT.margin * 2;
-
-  // Header Summary Metric Chips
+  // Header Summary Metric Chips & Dynamic Safety Width
   let metricPillsMarkup = '';
+  let minHeaderRequiredWidth = 640;
+
+  const titleText = `GitHub Organization Map — ${account}`;
+  const subtitleText = `SNAPSHOT: ${date} · DAILY TELEMETRY`;
+  // Approximate pixel width of title (14.5px bold font ≈ 8.8px/char) + icon/padding offset (60px)
+  const leftTitleWidth = 60 + titleText.length * 8.8;
+  const leftSubtitleWidth = 60 + subtitleText.length * 7.0;
+
   if (summary) {
     const p1Text = `${summary.publicCount} Public`;
-    const p1W = 86;
+    const p1W = Math.max(80, p1Text.length * 7.2 + 28);
 
     const p2Text = `${summary.privateCount} Masked`;
-    const p2W = 92;
+    const p2W = Math.max(86, p2Text.length * 7.2 + 28);
 
     const langFormatted =
       summary.languages.length > 0
         ? summary.languages.slice(0, 3).map((l) => `${l.language} ${l.count}`).join(' · ')
         : 'None';
     const p3Text = `Languages: ${langFormatted}`;
-    const p3W = Math.max(120, p3Text.length * 6.5 + 24);
+    const p3W = Math.max(120, p3Text.length * 6.3 + 22);
 
-    const startX = headerWidth - (p1W + p2W + p3W + 20) - 12;
+    const topChipsWidth = p1W + 8 + p2W;
+    const bottomChipsWidth = p3W;
+
+    // Minimum required header width so that top & bottom rows maintain at least 32px gap from left text
+    const minTopRowWidth = leftTitleWidth + 32 + topChipsWidth + 14;
+    const minBottomRowWidth = leftSubtitleWidth + 32 + bottomChipsWidth + 14;
+    minHeaderRequiredWidth = Math.max(minTopRowWidth, minBottomRowWidth);
+  } else {
+    minHeaderRequiredWidth = Math.max(leftTitleWidth, leftSubtitleWidth) + 32;
+  }
+
+  const minCanvasWidth = Math.max(minHeaderRequiredWidth + LAYOUT.margin * 2, 840);
+  const width = Math.max(LAYOUT.margin * 2 + contentWidth, minCanvasWidth);
+  const height = groupTop + contentHeight + LAYOUT.footerHeight + 8;
+  const headerWidth = width - LAYOUT.margin * 2;
+
+  if (summary) {
+    const p1Text = `${summary.publicCount} Public`;
+    const p1W = Math.max(80, p1Text.length * 7.2 + 28);
+
+    const p2Text = `${summary.privateCount} Masked`;
+    const p2W = Math.max(86, p2Text.length * 7.2 + 28);
+
+    const langFormatted =
+      summary.languages.length > 0
+        ? summary.languages.slice(0, 3).map((l) => `${l.language} ${l.count}`).join(' · ')
+        : 'None';
+    const p3Text = `Languages: ${langFormatted}`;
+    const p3W = Math.max(120, p3Text.length * 6.3 + 22);
+
+    // Two-tier arrangement:
+    // Row 1 (y=10): Public & Masked chips aligned right
+    const row1StartX = headerWidth - (p1W + 8 + p2W) - 12;
+
+    // Row 2 (y=34): Languages chip aligned right
+    const row2StartX = headerWidth - p3W - 12;
 
     metricPillsMarkup = `
-      <!-- Metric Chip 1: Public -->
-      <g transform="translate(${startX}, 12)">
-        <rect width="${p1W}" height="28" rx="6" fill="#092319" stroke="#065f46" stroke-width="1"/>
-        <circle cx="12" cy="14" r="3.5" fill="#34d399"/>
-        <text x="22" y="18" fill="#6ee7b7" font-family="${FONT_STACK}" font-size="11" font-weight="700">${escapeXml(p1Text)}</text>
+      <!-- Metric Chip 1: Public (Row 1) -->
+      <g transform="translate(${row1StartX}, 10)">
+        <rect width="${p1W}" height="22" rx="5" fill="#092319" stroke="#065f46" stroke-width="1"/>
+        <circle cx="10" cy="11" r="3" fill="#34d399"/>
+        <text x="18" y="15" fill="#6ee7b7" font-family="${FONT_STACK}" font-size="10.5" font-weight="700">${escapeXml(p1Text)}</text>
       </g>
-      <!-- Metric Chip 2: Private -->
-      <g transform="translate(${startX + p1W + 10}, 12)">
-        <rect width="${p2W}" height="28" rx="6" fill="#240d16" stroke="#881337" stroke-width="1"/>
-        <circle cx="12" cy="14" r="3.5" fill="#f43f5e"/>
-        <text x="22" y="18" fill="#fda4af" font-family="${FONT_STACK}" font-size="11" font-weight="700">${escapeXml(p2Text)}</text>
+      <!-- Metric Chip 2: Private / Masked (Row 1) -->
+      <g transform="translate(${row1StartX + p1W + 8}, 10)">
+        <rect width="${p2W}" height="22" rx="5" fill="#240d16" stroke="#881337" stroke-width="1"/>
+        <circle cx="10" cy="11" r="3" fill="#f43f5e"/>
+        <text x="18" y="15" fill="#fda4af" font-family="${FONT_STACK}" font-size="10.5" font-weight="700">${escapeXml(p2Text)}</text>
       </g>
-      <!-- Metric Chip 3: Languages -->
-      <g transform="translate(${startX + p1W + p2W + 20}, 12)">
-        <rect width="${p3W}" height="28" rx="6" fill="#0d1527" stroke="#1d2f4d" stroke-width="1"/>
-        <text x="12" y="18" fill="#93c5fd" font-family="${FONT_STACK}" font-size="10.5" font-weight="600">${escapeXml(p3Text)}</text>
+      <!-- Metric Chip 3: Languages (Row 2) -->
+      <g transform="translate(${row2StartX}, 34)">
+        <rect width="${p3W}" height="22" rx="5" fill="#0d1527" stroke="#1d2f4d" stroke-width="1"/>
+        <text x="10" y="15" fill="#93c5fd" font-family="${FONT_STACK}" font-size="10" font-weight="600">${escapeXml(p3Text)}</text>
       </g>`;
   }
 
@@ -342,22 +381,22 @@ export function buildSvg({
 
   <!-- Base Dashboard Canvas (GitHub Dark #0d1117 background base eliminates corner notches) -->
   <rect width="${width}" height="${height}" fill="#0d1117"/>
-  <rect x="1" y="1" width="${width - 2}" height="${height - 2}" rx="14" fill="url(#canvas-bg)" stroke="#1e293b" stroke-width="1.2"/>
+  <rect x="1" y="1" width="${width - 2}" height="${height - 2}" rx="14" fill="url(#canvas-bg)" stroke="#1e2c45" stroke-width="1.2"/>
   <rect x="1" y="1" width="${width - 2}" height="${height - 2}" rx="14" fill="url(#ui-grid)"/>
 
   <!-- Top Status & Navigation Bar -->
   <g transform="translate(${LAYOUT.margin}, ${LAYOUT.margin})">
-    <rect width="${headerWidth}" height="52" rx="8" fill="#0d1424" stroke="#1e2c45" stroke-width="1"/>
+    <rect width="${headerWidth}" height="${LAYOUT.headerHeight}" rx="8" fill="#0d1424" stroke="#1e2c45" stroke-width="1"/>
     
     <!-- Active Status Pulse LED -->
-    <rect x="10" y="10" width="32" height="32" rx="6" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
-    <circle cx="26" cy="26" r="4.5" fill="#34d399" filter="url(#badge-glow)"/>
+    <rect x="12" y="14" width="36" height="36" rx="7" fill="#064e3b" stroke="#34d399" stroke-width="1"/>
+    <circle cx="30" cy="32" r="4.5" fill="#34d399" filter="url(#badge-glow)"/>
 
     <!-- Title & Date -->
-    <text x="52" y="24" fill="#f8fafc" font-family="${FONT_STACK}" font-size="14.5" font-weight="700">GitHub Organization Map — ${escapeXml(
+    <text x="60" y="27" fill="#f8fafc" font-family="${FONT_STACK}" font-size="14.5" font-weight="700">GitHub Organization Map — ${escapeXml(
       account
     )}</text>
-    <text x="52" y="40" fill="#7dd3fc" font-family="${FONT_STACK}" font-size="11" font-weight="600">SNAPSHOT: ${escapeXml(
+    <text x="60" y="47" fill="#7dd3fc" font-family="${FONT_STACK}" font-size="10.5" font-weight="600">SNAPSHOT: ${escapeXml(
       date
     )} · DAILY TELEMETRY</text>
 

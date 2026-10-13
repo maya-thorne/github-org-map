@@ -11,7 +11,7 @@
 // no duplicate frames), and org-map.svg / org-map.gif are regenerated from
 // scratch each run.
 
-import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import dns from 'node:dns';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -266,6 +266,27 @@ async function main(): Promise<void> {
     .map((name) => path.join(HISTORY_DIR, name));
 
   await buildGif(historyFiles, GIF_PATH, config.gif ?? {});
+
+  // Synchronize generated SVG and GIF across all localized documentation assets
+  const LOCALES_DIR = path.join(ROOT, 'docs', 'assets', 'locales');
+  try {
+    const localeEntries = await readdir(LOCALES_DIR, { withFileTypes: true });
+    for (const entry of localeEntries) {
+      if (entry.isDirectory()) {
+        const localeSvgPath = path.join(LOCALES_DIR, entry.name, 'org-map.svg');
+        await writeFile(localeSvgPath, svg, 'utf-8');
+      }
+    }
+  } catch {
+    // Non-fatal if docs/assets/locales is absent in lean environments
+  }
+
+  const TIMELAPSE_GIF_PATH = path.join(ROOT, 'docs', 'assets', 'timelapse.gif');
+  try {
+    await copyFile(GIF_PATH, TIMELAPSE_GIF_PATH);
+  } catch {
+    // Non-fatal if docs/assets is absent
+  }
 
   // Counted from the filtered list, not the raw fetch, so the numbers
   // logged describe what was actually rendered rather than claiming a count

@@ -11,7 +11,7 @@
   "scripts": {
     "generate": "tsx scripts/generate.ts",
     "typecheck": "tsc --noEmit",
-    "test": "npm run typecheck && tsx --test test/mask.test.ts test/github.test.ts test/generate.test.ts"
+    "test": "npm run typecheck && tsx --test test/mask.test.ts test/github.test.ts test/generate.test.ts test/svg.test.ts"
   },
   "dependencies": {
     "gifenc": "^1.0.3",
