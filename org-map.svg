@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 658" width="840" height="658" role="img" aria-label="GitHub organization map for maya-thorne on 2026-10-28">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 658" width="840" height="658" role="img" aria-label="GitHub organization map for maya-thorne on 2026-10-29">
   <defs>
     <!-- Dark Homelab Canvas Gradient -->
     <linearGradient id="canvas-bg" x1="0" y1="0" x2="840" y2="658" gradientUnits="userSpaceOnUse">
@@ -38,7 +38,7 @@
 
     <!-- Title & Date -->
     <text x="60" y="27" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700">GitHub Organization Map — maya-thorne</text>
-    <text x="60" y="47" fill="#7dd3fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600">SNAPSHOT: 2026-10-28 · DAILY TELEMETRY</text>
+    <text x="60" y="47" fill="#7dd3fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="600">SNAPSHOT: 2026-10-29 · DAILY TELEMETRY</text>
 
     
       <!-- Metric Chip 1: Public (Row 1) -->
